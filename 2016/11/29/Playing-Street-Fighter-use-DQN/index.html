@@ -51,7 +51,8 @@
 <p>The box is the players’ blood bar region(the blue box in the following image):</p>
 <p><img src="http://i.imgur.com/KoA5kB3.png" alt=""></p>
 <p><code>check_player_blood</code> receives the game image and certain player’s,i.e, your or enemy’s, blood bar box, and returns his blood left between 0~100.</p>
-<h1 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h1><p><strong>Lasagne and Theano</strong></p>
+<h1 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h1><hr>
+<p><strong>Lasagne and Theano</strong></p>
 <p><strong>CUDA</strong></p>
 <p>To install Lasagne on window, you can reference to my blog <a href="https://tabsun.github.io/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" target="_blank" rel="external">“Lasagne On Win7 With GPU Environment &amp; VizDoom Compilation”</a> writen in Chinese.</p>
 <h1 id="How-to-control-the-player"><a href="#How-to-control-the-player" class="headerlink" title="How to control the player?"></a>How to control the player?</h1><hr>
@@ -75,8 +76,10 @@
 <p><code>Dense128@sigmoid</code></p>
 <p><code>Dense256</code>(output)</p>
 <h3 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">g_learning_rate = <span class="number">0.00025</span></div><div class="line">g_discount_factor = <span class="number">0.95</span></div><div class="line">g_epochs = <span class="number">100</span></div><div class="line">g_learning_steps_per_epoch = <span class="number">50000</span></div><div class="line">g_replay_memory_size = <span class="number">10000</span></div><div class="line">g_batch_size = <span class="number">64</span></div><div class="line">g_test_episodes_per_epoch = <span class="number">10</span></div><div class="line">g_frame_repeat = <span class="number">4</span></div></pre></td></tr></table></figure>
-<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><p>To accelerate the training process, I commented the test in every epoch and only focus on train scores.<br>And also for training simplicity, the game backgroud is changed to white background. If necessary you can set it by yourself.Just modify StreetFighter/images/g/behind.gif and front.gif.</p>
-<h1 id="Current-Result"><a href="#Current-Result" class="headerlink" title="Current Result"></a>Current Result</h1><p>At the beginning I set epochs = 20 and learning_steps_per_epoch = 2000. And make following attempts:</p>
+<h1 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h1><hr>
+<p>To accelerate the training process, I commented the test in every epoch and only focus on train scores.<br>And also for training simplicity, the game backgroud is changed to white background. If necessary you can set it by yourself.Just modify StreetFighter/images/g/behind.gif and front.gif.</p>
+<h1 id="Current-Result"><a href="#Current-Result" class="headerlink" title="Current Result"></a>Current Result</h1><hr>
+<p>At the beginning I set epochs = 20 and learning_steps_per_epoch = 2000. And make following attempts:</p>
 <ol>
 <li>change gray input to color input — no convergence </li>
 <li>change frame_repeat to 2,4,12 — no convergence</li>
@@ -92,7 +95,8 @@
 <p>And after ranging from these params, I think the problem is that the total train steps(minibatch weight update times) aren’t enough as the paper “Playing Atari with Deep Reinforcement Learning” points, it takes 100 epochs x 50000 minibatch updates.Comparing to this number my setting is too naive.So now I’m doing experiment on new setting.</p>
 <p>REALLY EXPECT FOR A GOOD PERFORMANCE AT LEAST CONVERGENCE!!!!</p>
 <p>The Rainbow comes after the storm.</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><hr>
+<ol>
 <li><a href="https://github.com/tabsun/AI4SF" target="_blank" rel="external">Project</a></li>
 <li><a href="https://arxiv.org/pdf/1312.5602.pdf" target="_blank" rel="external">Playing Atari with Deep Reinforcement Learning</a>)</li>
 <li><a href="https://code.tutsplus.com/tutorials/how-to-build-a-python-bot-that-can-play-web-games--active-11117" target="_blank" rel="external">How to build a python bot that can play web games</a></li>
