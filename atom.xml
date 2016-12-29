@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-29T09:01:09.494Z</updated>
+  <updated>2016-12-29T09:13:03.504Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/"/>
     <id>http://yoursite.com/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/</id>
     <published>2016-12-29T08:31:08.000Z</published>
-    <updated>2016-12-29T09:01:09.494Z</updated>
+    <updated>2016-12-29T09:13:03.504Z</updated>
     
     <content type="html"><![CDATA[<p>FPS（First Person Shooter），第一人称射击游戏，这里特指的是<a href="http://vizdoom.cs.put.edu.pl/" target="_blank" rel="external">Doom</a>游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。</p>
 <p>下面的视频中是在一个“小房子”里<font color="#ff0000"><strong>AI Bot（左）</strong></font>与一个随意行动的<font color="#009900"><strong>Random Bot（右）</strong></font>的对抗过程，在100场Test比赛中战胜Random Bot 95次。可以看到，AI Bot可以做到没有看到敌人时四处寻找，看到敌人时能够快速击毙敌人。而完成这些，模型不需要其他任何输入，仅需要当前游戏的画面，与真实玩家的操作过程没有任何区别。在几次测试中，因为操作不好，我基本没有赢过AI Bot，唯一的可能就是开局赶紧跑到他的背后，否则胜算不大，当然我是比较菜的。</p>
@@ -37,8 +37,7 @@
 <p>  get_game_variable: 获取游戏中的某些变量，如血量、子弹数量等</p>
 <p>  is_episode_finished: 判断当前一局游戏是否已经结束</p>
 <p>  new_episode: 新开一局 </p>
-<h2 id="2-3-Doom-Builder"><a href="#2-3-Doom-Builder" class="headerlink" title="2.3 Doom Builder"></a>2.3 Doom Builder</h2><p>  VizDoom只是提供一个控制Doom游戏的框架，其控制能力是有限的。实际上要打造一个自己的游戏环境，更合适的方式是用<a href="http://www.doombuilder.com/" target="_blank" rel="external">Doom Builder</a>创建自己的地图，可以完成对游戏内容的完全控制。</p>
-<p><center><br><img src="http://i.imgur.com/vLszjb7.jpg" alt="Doom builder"><br></center><br>  它包含Vertices、Linedefs、Sectors、Things、Brightness及Make Sectors共6中mode，常用的是前4种，分别编辑地图中的点、线、区域和事物（比如起始位置、补给箱、弹药等）。这些是用来设计地图中的场景，而执行逻辑要靠<a href="https://zdoom.org/wiki/ACS" target="_blank" rel="external">ACS</a> 脚本。以下面的代码为例，分别定义打开游戏、进入新的episode和角色重生时的动作：角色使用火箭炮，并配备10发炮弹。其他示例可以自行查看scenarios/*.wad文件，所幸这里的代码一般不用很长，所以只要构建出想要的地图和reward机制就可以了（reward机制是重点），Doom中built in的ACS functions可以参见<a href="https://zdoom.org/wiki/Built-in_ACS_functions" target="_blank" rel="external">这里</a>。</p>
+<h2 id="2-3-Doom-Builder"><a href="#2-3-Doom-Builder" class="headerlink" title="2.3 Doom Builder"></a>2.3 Doom Builder</h2><p>  VizDoom只是提供一个控制Doom游戏的框架，其控制能力是有限的。实际上要打造一个自己的游戏环境，更合适的方式是用<a href="http://www.doombuilder.com/" target="_blank" rel="external">Doom Builder</a>创建自己的地图，可以完成对游戏内容的完全控制。<br><img src="http://i.imgur.com/NklVgMv.png" alt=""><br>  它包含Vertices、Linedefs、Sectors、Things、Brightness及Make Sectors共6中mode，常用的是前4种，分别编辑地图中的点、线、区域和事物（比如起始位置、补给箱、弹药等）。这些是用来设计地图中的场景，而执行逻辑要靠<a href="https://zdoom.org/wiki/ACS" target="_blank" rel="external">ACS</a> 脚本。以下面的代码为例，分别定义打开游戏、进入新的episode和角色重生时的动作：角色使用火箭炮，并配备10发炮弹。其他示例可以自行查看scenarios/*.wad文件，所幸这里的代码一般不用很长，所以只要构建出想要的地图和reward机制就可以了（reward机制是重点），Doom中built in的ACS functions可以参见<a href="https://zdoom.org/wiki/Built-in_ACS_functions" target="_blank" rel="external">这里</a>。</p>
 <pre><code class="python"><span class="comment">#include "zcommon.acs"</span>
 script <span class="number">1</span> OPEN
 {
