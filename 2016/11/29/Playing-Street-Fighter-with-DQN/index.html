@@ -91,6 +91,8 @@
 <li>change relu to sigmoid — no convergence</li>
 <li>add maxpooling layer — no convergence</li>
 <li>change the input size — no convergence</li>
+<li>change the keys to available actions</li>
+<li>try dueling dqn</li>
 </ol>
 <p>And after ranging from these params, I think the problem is that the total train steps(minibatch weight update times) aren’t enough as the paper “Playing Atari with Deep Reinforcement Learning” points, it takes 100 epochs x 50000 minibatch updates.Comparing to this number my setting is too naive.So now I’m doing experiment on new setting.</p>
 <p>REALLY EXPECT FOR A GOOD PERFORMANCE, OR AT LEAST CONVERGENCE!!!!</p>
