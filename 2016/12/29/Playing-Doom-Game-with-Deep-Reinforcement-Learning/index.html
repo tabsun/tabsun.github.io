@@ -41,19 +41,23 @@
     <p>FPS（First Person Shooter），第一人称射击游戏，这里特指的是<a href="http://vizdoom.cs.put.edu.pl/" target="_blank" rel="external">Doom</a>游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。</p>
 <p>下面的视频中是在一个“小房子”里<font color="#ff0000"><strong>AI Bot（左）</strong></font>与一个随意行动的<font color="#009900"><strong>Random Bot（右）</strong></font>的对抗过程，在100场Test比赛中战胜Random Bot 95次。可以看到，AI Bot可以做到没有看到敌人时四处寻找，看到敌人时能够快速击毙敌人。而完成这些，模型不需要其他任何输入，仅需要当前游戏的画面，与真实玩家的操作过程没有任何区别。在几次测试中，因为操作不好，我基本没有赢过AI Bot，唯一的可能就是开局赶紧跑到他的背后，否则胜算不大，当然我是比较菜的。</p>
 <p><a href="https://www.youtube.com/watch?v=nqH3_YDCS9Q&amp;t=4s" target="_blank" rel="external"><strong>Demo Video: AI bot vs Random bot</strong></a></p>
-<h1 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1. 模型介绍"></a>1. 模型介绍</h1><p>  对于在某个时刻执行某种动作总是可以从环境获得固定响应的游戏，用NEAT [1] 这样的算法可以获得较好的效果，比如玩马里奥游戏时，如果你一直按着前进键不放，每次重生后的游戏过程都会完全一致（掉入某个悬崖或碰上第一个小怪物），而在Doom游戏中如果你一直在原地射击，你的敌人的行动会不同，出场时你的位置也不同，所以几乎不会出现完全一致的游戏过程（敌人可能会从不同角度射杀你或者一直互不相干）。</p>
+<h2 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1. 模型介绍"></a>1. 模型介绍</h2><p>  对于在某个时刻执行某种动作总是可以从环境获得固定响应的游戏，用NEAT [1] 这样的算法可以获得较好的效果，比如玩马里奥游戏时，如果你一直按着前进键不放，每次重生后的游戏过程都会完全一致（掉入某个悬崖或碰上第一个小怪物），而在Doom游戏中如果你一直在原地射击，你的敌人的行动会不同，出场时你的位置也不同，所以几乎不会出现完全一致的游戏过程（敌人可能会从不同角度射杀你或者一直互不相干）。</p>
 <p>  同时，与Atari游戏最大的不同是，获取的图像并非游戏的状态State，而是对当前状态的一次观察Observation，即角色周围90°范围内的内容。要解决的问题并不是MDPs(Markov decision processes)问题，而是POMDPs(partially observable MDPs)。DQN [2]在处理action依赖于history states的问题时，不易收敛。实际上在我的多次实验中，稍微复杂的任务都未能收敛。</p>
 <p>  在实验中发现，将DQN中的Q值网络分为Policy（下图下半部分计算advantage for actions的部分）与Value（上半部分计算state-value的部分）两个共享卷积层的网络（DDQN的做法[3]），并且将二者在网络末尾再次结合获得action value，这样的网络结构收敛能力得到大大的提高。实际上这种方式的优势是收敛性和泛化能力上都得到了提升[4]。</p>
-<p><center><br><img src="http://i.imgur.com/btx54oy.png" alt="net architecture"><br></center></p>
-<h1 id="2-Doom环境"><a href="#2-Doom环境" class="headerlink" title="2. Doom环境"></a>2. Doom环境</h1><p>  Project： <a href="https://github.com/Marqt/ViZDoom" target="_blank" rel="external">https://github.com/Marqt/ViZDoom</a></p>
-<h2 id="2-1-Quick-start"><a href="#2-1-Quick-start" class="headerlink" title="2.1 Quick start"></a>2.1 Quick start</h2><p>  在另一篇<a href="https://tabsun.github.io/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" target="_blank" rel="external">Post</a>中，介绍了如何在笔记本上安装CUDA、Theano、Lasagne以及Doom的编译过程。VizDoom在example目录下提供了很多快速上手的示例，对开始使用VizDoom及Lasagne都非常有帮助，建议从learning_theano开始。</p>
-<h2 id="2-2-Interfaces"><a href="#2-2-Interfaces" class="headerlink" title="2.2 Interfaces"></a>2.2 Interfaces</h2><p>  下面是Doom提供的几个比较常用的接口：</p>
+<center><br><img src="http://i.imgur.com/btx54oy.png" alt="net architecture"><br></center>
+
+<h2 id="2-Doom环境"><a href="#2-Doom环境" class="headerlink" title="2. Doom环境"></a>2. Doom环境</h2><p>  Project： <a href="https://github.com/Marqt/ViZDoom" target="_blank" rel="external">https://github.com/Marqt/ViZDoom</a></p>
+<h1 id="2-1-Quick-start"><a href="#2-1-Quick-start" class="headerlink" title="2.1 Quick start"></a>2.1 Quick start</h1><p>  在另一篇<a href="https://tabsun.github.io/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" target="_blank" rel="external">Post</a>中，介绍了如何在笔记本上安装CUDA、Theano、Lasagne以及Doom的编译过程。VizDoom在example目录下提供了很多快速上手的示例，对开始使用VizDoom及Lasagne都非常有帮助，建议从learning_theano开始。</p>
+<h1 id="2-2-Interfaces"><a href="#2-2-Interfaces" class="headerlink" title="2.2 Interfaces"></a>2.2 Interfaces</h1><p>  下面是Doom提供的几个比较常用的接口：</p>
 <p>  make_action: 执行命令并返回reward</p>
 <p>  get_state: 获取游戏当前状态</p>
 <p>  get_game_variable: 获取游戏中的某些变量，如血量、子弹数量等</p>
 <p>  is_episode_finished: 判断当前一局游戏是否已经结束</p>
 <p>  new_episode: 新开一局 </p>
-<h2 id="2-3-Doom-Builder"><a href="#2-3-Doom-Builder" class="headerlink" title="2.3 Doom Builder"></a>2.3 Doom Builder</h2><p>  VizDoom只是提供一个控制Doom游戏的框架，其控制能力是有限的。实际上要打造一个自己的游戏环境，更合适的方式是用<a href="http://www.doombuilder.com/" target="_blank" rel="external">Doom Builder</a>创建自己的地图，可以完成对游戏内容的完全控制。<br><img src="http://i.imgur.com/NklVgMv.png" alt=""><br>  它包含Vertices、Linedefs、Sectors、Things、Brightness及Make Sectors共6中mode，常用的是前4种，分别编辑地图中的点、线、区域和事物（比如起始位置、补给箱、弹药等）。这些是用来设计地图中的场景，而执行逻辑要靠<a href="https://zdoom.org/wiki/ACS" target="_blank" rel="external">ACS</a> 脚本。以下面的代码为例，分别定义打开游戏、进入新的episode和角色重生时的动作：角色使用火箭炮，并配备10发炮弹。其他示例可以自行查看scenarios/*.wad文件，所幸这里的代码一般不用很长，所以只要构建出想要的地图和reward机制就可以了（reward机制是重点），Doom中built in的ACS functions可以参见<a href="https://zdoom.org/wiki/Built-in_ACS_functions" target="_blank" rel="external">这里</a>。</p>
+<h1 id="2-3-Doom-Builder"><a href="#2-3-Doom-Builder" class="headerlink" title="2.3 Doom Builder"></a>2.3 Doom Builder</h1><p>  VizDoom只是提供一个控制Doom游戏的框架，其控制能力是有限的。实际上要打造一个自己的游戏环境，更合适的方式是用<a href="http://www.doombuilder.com/" target="_blank" rel="external">Doom Builder</a>创建自己的地图，可以完成对游戏内容的完全控制。</p>
+<center><br><img src="http://i.imgur.com/sitQ8tm.png" alt=""><br></center>
+
+<p>  它包含Vertices、Linedefs、Sectors、Things、Brightness及Make Sectors共6中mode，常用的是前4种，分别编辑地图中的点、线、区域和事物（比如起始位置、补给箱、弹药等）。这些是用来设计地图中的场景，而执行逻辑要靠<a href="https://zdoom.org/wiki/ACS" target="_blank" rel="external">ACS</a> 脚本。以下面的代码为例，分别定义打开游戏、进入新的episode和角色重生时的动作：角色使用火箭炮，并配备10发炮弹。其他示例可以自行查看scenarios/*.wad文件，所幸这里的代码一般不用很长，所以只要构建出想要的地图和reward机制就可以了（reward机制是重点），Doom中built in的ACS functions可以参见<a href="https://zdoom.org/wiki/Built-in_ACS_functions" target="_blank" rel="external">这里</a>。</p>
 <pre><code class="python"><span class="comment">#include "zcommon.acs"</span>
 script <span class="number">1</span> OPEN
 {
@@ -71,10 +75,12 @@ script <span class="number">3</span> RESPAWN
     GiveInventory(<span class="string">"RocketAmmo"</span>,<span class="number">10</span>);
 }
 </code></pre>
-<h1 id="3-训练过程"><a href="#3-训练过程" class="headerlink" title="3. 训练过程"></a>3. 训练过程</h1><p>  视频中的示例的训练过程总共耗时大概四五天时间（GeForce 940M）。训练过程是非常受制于游戏进程的：如果游戏本身运行速度不够快，训练过程中会有相当一部分时间被耽搁在等待游戏返回reward的过程（make_action）。</p>
+<h2 id="3-训练过程"><a href="#3-训练过程" class="headerlink" title="3. 训练过程"></a>3. 训练过程</h2><p>  视频中的示例的训练过程总共耗时大概四五天时间（GeForce 940M）。训练过程是非常受制于游戏进程的：如果游戏本身运行速度不够快，训练过程中会有相当一部分时间被耽搁在等待游戏返回reward的过程（make_action）。</p>
 <p>  下图展示的是一些常用的优化方法收敛过程的视图：</p>
-<p><img src="http://i.imgur.com/TuoriLu.gif" alt="opt methods"><br>  通常训练DQN使用比较多的Rmsprop，不同的优化方法也存在提高训练速度的可能。另一种改进方法是以A3C [5]的方式收集训练transitions，这样游戏进程的速度限制得到缓解。</p>
-<h1 id="4-青出于蓝"><a href="#4-青出于蓝" class="headerlink" title="4. 青出于蓝"></a>4. 青出于蓝</h1><p>  在以Random Bot为对手的环境中训练得到AI Bot后，可以尝试以AI Bot为对手，继续训练新的AI Bot2，感兴趣的同学可以试试看青出于蓝是否可以胜于蓝。A被B打败，C又打败B……但是恐怕随着难度的增加，这对训练过程的要求不断提高，是否能够靠同一个模型的不断训练和反馈来得到提高还有待商榷。</p>
+<center><br><img src="http://i.imgur.com/TuoriLu.gif" alt="opt methods"><br></center>
+
+<p>  通常训练DQN使用比较多的Rmsprop，不同的优化方法也存在提高训练速度的可能。另一种改进方法是以A3C [5]的方式收集训练transitions，这样游戏进程的速度限制得到缓解。</p>
+<h2 id="4-青出于蓝"><a href="#4-青出于蓝" class="headerlink" title="4. 青出于蓝"></a>4. 青出于蓝</h2><p>  在以Random Bot为对手的环境中训练得到AI Bot后，可以尝试以AI Bot为对手，继续训练新的AI Bot2，感兴趣的同学可以试试看青出于蓝是否可以胜于蓝。A被B打败，C又打败B……但是恐怕随着难度的增加，这对训练过程的要求不断提高，是否能够靠同一个模型的不断训练和反馈来得到提高还有待商榷。</p>
 <p>相关阅读：</p>
 <p>[1]. <a href="http://glenn-roberts.com/posts/tech/2015/07/08/neuroevolution-with-mario.html" target="_blank" rel="external">neuro evolution with mario</a></p>
 <p>[2]. <a href="https://arxiv.org/pdf/1312.5602.pdf" target="_blank" rel="external">Playing Atari with Deep Reinforcement Learning</a>)</p>
