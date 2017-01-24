@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  <title>Lasagne on win7 with GPU Environment &amp; VizDoom compilation | Tabsun</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
-  
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Theano与Lasagne
+1. Anaconda安装2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下3. 进入Conda prompt：12345678conda create -n python34 python=3.4.4act">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Tabsun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Lasagne on win7 with GPU Environment &amp; VizDoom compilation"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="undefined"/>
+    
+
+    <!-- Title -->
+    
+    <title>Lasagne on win7 with GPU Environment &amp; VizDoom compilation - Hexo</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
 </head>
 
 <body>
-  <nav class="app-nav">
-  
-    
-      <a href="/.">home</a>
-    
-  
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/">Lasagne on win7 with GPU Environment & VizDoom compilation</a>
-  </h1>
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">Hexo</a>
+    </div><!-- end logo -->
 
-  <section class="article-meta">
-    <p class="article-date">November 25 2016</p>
-  </section>
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
 
-  <section class="article-entry">
-    <h2 id="Theano与Lasagne"><a href="#Theano与Lasagne" class="headerlink" title="Theano与Lasagne"></a>Theano与Lasagne</h2><hr>
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/2016/11/29/Playing-Street-Fighter-with-DQN/" class="previous" data-title="Playing Street Fighter with DQN"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/2016/11/23/hello-world/" class="next" data-title="Hello World"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">Lasagne on win7 with GPU Environment & VizDoom compilation</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <h2 id="Theano与Lasagne"><a href="#Theano与Lasagne" class="headerlink" title="Theano与Lasagne"></a>Theano与Lasagne</h2><hr>
 <h3 id="1-Anaconda安装"><a href="#1-Anaconda安装" class="headerlink" title="1. Anaconda安装"></a>1. <a href="http://www.continuum.io/downloads" target="_blank" rel="external">Anaconda</a>安装</h3><h3 id="2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下"><a href="#2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下" class="headerlink" title="2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下"></a>2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下</h3><h3 id="3-进入Conda-prompt："><a href="#3-进入Conda-prompt：" class="headerlink" title="3. 进入Conda prompt："></a>3. 进入Conda prompt：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">conda create -n python34 python=3.4.4</div><div class="line">activate python34</div><div class="line">cd C:/Program Files/Anaconda2/envs/python34/Scripts</div><div class="line">conda install mingw</div><div class="line">conda install libpython -n python34</div><div class="line">conda install scipy</div><div class="line">conda install nose</div><div class="line">conda install theano</div></pre></td></tr></table></figure>
 </code></pre><h3 id="4-检查下mingw的目录是否在环境变量中："><a href="#4-检查下mingw的目录是否在环境变量中：" class="headerlink" title="4. 检查下mingw的目录是否在环境变量中："></a>4. 检查下mingw的目录是否在环境变量中：</h3><p>path:<br><code>C:\Program Files\Anaconda2\envs\python34\MinGW\bin</code><br><code>C:\Program Files\Anaconda2\envs\python34\MinGW\x86_64-w64-mingw32\lib</code><br>这个目录与攻略中略有不同，因为我们通过anaconda安装的mingw在python34目录下<br>PYTHONPATH:<br><code>C:\Program Files\Anaconda2\Lib\site-packages\theano</code></p>
 <h3 id="5-安装VS2015"><a href="#5-安装VS2015" class="headerlink" title="5. 安装VS2015"></a>5. 安装VS2015</h3><p>在VizDoom的编译中是必须的，而且CUDA安装时同样需要VS2015.</p>
@@ -63,78 +146,41 @@ cxxflags=-IC:\openblas\include -LC:\openblas\lib</code><br>这里openblas就是�
 <li>cmake配置工程项的时候，如果不需要JAVA支持（我使用python binding）尽量就不要选了；而其中有些zlib等要选择inner编译<br>我直接copy了在另一个机器上（同样为win7 64bit）的编译结果，如果真的懒得安装那么多东西，可以直接copy我编译的结果。</li>
 </ol>
 
-  </section>
-</article>
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="/images/tab.jpg" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> Tabsun </p>
-      <p class="subtitle"> Hope, Smile, Love, Safe </p>
-    <div>
-  </section>
+            <!-- Tags -->
+            
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text= id="Theano与Lasagne""
->
-  Tweet
-</a>
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
-  </section>
+<div class="tags">
+    
 </div>
 
 
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
-<script>
-  var disqus_shortname = 'Tabsun';
-  
-  var disqus_url = 'http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+            <!-- Comments -->
+            <div>
+                
 
 
-  
-</main>
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
 
 </body>
+
 </html>

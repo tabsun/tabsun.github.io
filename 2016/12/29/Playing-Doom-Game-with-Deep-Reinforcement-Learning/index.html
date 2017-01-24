@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  <title>Playing Doom Game with Deep Reinforcement Learning | Tabsun</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
-  
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="FPS（First Person Shooter），第一人称射击游戏，这里特指的是Doom游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。
+下面的视频中是在一个“小房子”里AI Bot（左）与一个随意行动">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Tabsun">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Playing Doom Game with Deep Reinforcement Learning"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="undefined"/>
+    
+
+    <!-- Title -->
+    
+    <title>Playing Doom Game with Deep Reinforcement Learning - Hexo</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
 </head>
 
 <body>
-  <nav class="app-nav">
-  
-    
-      <a href="/.">home</a>
-    
-  
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/">Playing Doom Game with Deep Reinforcement Learning</a>
-  </h1>
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">Hexo</a>
+    </div><!-- end logo -->
 
-  <section class="article-meta">
-    <p class="article-date">December 29 2016</p>
-  </section>
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
 
-  <section class="article-entry">
-    <p>FPS（First Person Shooter），第一人称射击游戏，这里特指的是<a href="http://vizdoom.cs.put.edu.pl/" target="_blank" rel="external">Doom</a>游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。</p>
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a class="previous disabled"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/2016/11/29/Playing-Street-Fighter-with-DQN/" class="next" data-title="Playing Street Fi..."></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">Playing Doom Game with Deep Reinforcement Learning</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <p>FPS（First Person Shooter），第一人称射击游戏，这里特指的是<a href="http://vizdoom.cs.put.edu.pl/" target="_blank" rel="external">Doom</a>游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。</p>
 <p>下面的视频中是在一个“小房子”里<font color="#ff0000"><strong>AI Bot（左）</strong></font>与一个随意行动的<font color="#009900"><strong>Random Bot（右）</strong></font>的对抗过程，在100场Test比赛中战胜Random Bot 95次。可以看到，AI Bot可以做到没有看到敌人时四处寻找，看到敌人时能够快速击毙敌人。而完成这些，模型不需要其他任何输入，仅需要当前游戏的画面，与真实玩家的操作过程没有任何区别。在几次测试中，因为操作不好，我基本没有赢过AI Bot，唯一的可能就是开局赶紧跑到他的背后，否则胜算不大，当然我是比较菜的。</p>
 <p><a href="https://www.youtube.com/watch?v=nqH3_YDCS9Q&amp;t=4s" target="_blank" rel="external"><strong>Demo Video: AI bot vs Random bot</strong></a></p>
 <h2 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1. 模型介绍"></a>1. 模型介绍</h2><p>  对于在某个时刻执行某种动作总是可以从环境获得固定响应的游戏，用NEAT [1] 这样的算法可以获得较好的效果，比如玩马里奥游戏时，如果你一直按着前进键不放，每次重生后的游戏过程都会完全一致（掉入某个悬崖或碰上第一个小怪物），而在Doom游戏中如果你一直在原地射击，你的敌人的行动会不同，出场时你的位置也不同，所以几乎不会出现完全一致的游戏过程（敌人可能会从不同角度射杀你或者一直互不相干）。</p>
@@ -88,78 +171,41 @@ script <span class="number">3</span> RESPAWN
 <p>[4]. <a href="https://arxiv.org/pdf/1511.06581v3.pdf" target="_blank" rel="external">Dueling Network Architectures for Deep Reinforcement Learning</a></p>
 <p>[5]. <a href="https://arxiv.org/pdf/1602.01783.pdf" target="_blank" rel="external">Asynchronous Methods for Deep Reinforcement Learning</a></p>
 
-  </section>
-</article>
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="/images/tab.jpg" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> Tabsun </p>
-      <p class="subtitle"> Hope, Smile, Love, Safe </p>
-    <div>
-  </section>
+            <!-- Tags -->
+            
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text=FPS（First Person Sho"
->
-  Tweet
-</a>
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
-  </section>
+<div class="tags">
+    
 </div>
 
 
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
-<script>
-  var disqus_shortname = 'Tabsun';
-  
-  var disqus_url = 'http://yoursite.com/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+            <!-- Comments -->
+            <div>
+                
 
 
-  
-</main>
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
 
 </body>
+
 </html>
