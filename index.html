@@ -2,126 +2,440 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Tabsun</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
 </head>
 
 <body>
-  <nav class="app-nav">
-  
-    
-      <a class="active" href="/.">home</a>
-    
-  
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
-
-  <header class="app-header">
-  <section class="banner">
-    <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
-    <div class="placeholder"></div>
-    <img
-      class="banner-small"
-      data-src="http://7xrcp8.com1.z0.glb.clouddn.com/banner-large.png"
-      src="http://7xrcp8.com1.z0.glb.clouddn.com/banner-small.png"
-      alt="banner"
-    >
-  </section>
-
-  <section class="description">
-    <img class="avatar" src="/images/tab.jpg" alt="avatar" />
-    <h1 class="title"> Tabsun </h1>
-    <h3 class="subtitle"> Hope, Smile, Love, Safe </h3>
-  </section>
-
-  <ul class="social-list">
-    
-    <a href="https://github.com/tabsun">GitHub</a>
-    
-  </ul>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
 </header>
-
-<main class="index">
+      <div class="outer">
+        <section id="main">
   
-    <article>
-      <h1 class="article-title">
-        <a href="/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/">Playing Doom Game with Deep Reinforcement Learning</a>
-      </h1>
+    <article id="post-Playing-Doom-Game-with-Deep-Reinforcement-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/" class="article-date">
+  <time datetime="2016-12-29T08:31:08.000Z" itemprop="datePublished">2016-12-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/">Playing Doom Game with Deep Reinforcement Learning</a>
+    </h1>
+  
 
-      <div class="article-entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>FPS（First Person Shooter），第一人称射击游戏，这里特指的是<a href="http://vizdoom.cs.put.edu.pl/" target="_blank" rel="external">Doom</a>游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。</p>
+<p>下面的视频中是在一个“小房子”里<font color="#ff0000"><strong>AI Bot（左）</strong></font>与一个随意行动的<font color="#009900"><strong>Random Bot（右）</strong></font>的对抗过程，在100场Test比赛中战胜Random Bot 95次。可以看到，AI Bot可以做到没有看到敌人时四处寻找，看到敌人时能够快速击毙敌人。而完成这些，模型不需要其他任何输入，仅需要当前游戏的画面，与真实玩家的操作过程没有任何区别。在几次测试中，因为操作不好，我基本没有赢过AI Bot，唯一的可能就是开局赶紧跑到他的背后，否则胜算不大，当然我是比较菜的。</p>
+<p><a href="https://www.youtube.com/watch?v=nqH3_YDCS9Q&amp;t=4s" target="_blank" rel="external"><strong>Demo Video: AI bot vs Random bot</strong></a></p>
+<h2 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1. 模型介绍"></a>1. 模型介绍</h2><p>  对于在某个时刻执行某种动作总是可以从环境获得固定响应的游戏，用NEAT [1] 这样的算法可以获得较好的效果，比如玩马里奥游戏时，如果你一直按着前进键不放，每次重生后的游戏过程都会完全一致（掉入某个悬崖或碰上第一个小怪物），而在Doom游戏中如果你一直在原地射击，你的敌人的行动会不同，出场时你的位置也不同，所以几乎不会出现完全一致的游戏过程（敌人可能会从不同角度射杀你或者一直互不相干）。</p>
+<p>  同时，与Atari游戏最大的不同是，获取的图像并非游戏的状态State，而是对当前状态的一次观察Observation，即角色周围90°范围内的内容。要解决的问题并不是MDPs(Markov decision processes)问题，而是POMDPs(partially observable MDPs)。DQN [2]在处理action依赖于history states的问题时，不易收敛。实际上在我的多次实验中，稍微复杂的任务都未能收敛。</p>
+<p>  在实验中发现，将DQN中的Q值网络分为Policy（下图下半部分计算advantage for actions的部分）与Value（上半部分计算state-value的部分）两个共享卷积层的网络（DDQN的做法[3]），并且将二者在网络末尾再次结合获得action value，这样的网络结构收敛能力得到大大的提高。实际上这种方式的优势是收敛性和泛化能力上都得到了提升[4]。</p>
+<center><br><img src="http://i.imgur.com/btx54oy.png" alt="net architecture"><br></center>
+
+<h2 id="2-Doom环境"><a href="#2-Doom环境" class="headerlink" title="2. Doom环境"></a>2. Doom环境</h2><p>  Project： <a href="https://github.com/Marqt/ViZDoom" target="_blank" rel="external">https://github.com/Marqt/ViZDoom</a></p>
+<h1 id="2-1-Quick-start"><a href="#2-1-Quick-start" class="headerlink" title="2.1 Quick start"></a>2.1 Quick start</h1><p>  在另一篇<a href="https://tabsun.github.io/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" target="_blank" rel="external">Post</a>中，介绍了如何在笔记本上安装CUDA、Theano、Lasagne以及Doom的编译过程。VizDoom在example目录下提供了很多快速上手的示例，对开始使用VizDoom及Lasagne都非常有帮助，建议从learning_theano开始。</p>
+<h1 id="2-2-Interfaces"><a href="#2-2-Interfaces" class="headerlink" title="2.2 Interfaces"></a>2.2 Interfaces</h1><p>  下面是Doom提供的几个比较常用的接口：</p>
+<p>  make_action: 执行命令并返回reward</p>
+<p>  get_state: 获取游戏当前状态</p>
+<p>  get_game_variable: 获取游戏中的某些变量，如血量、子弹数量等</p>
+<p>  is_episode_finished: 判断当前一局游戏是否已经结束</p>
+<p>  new_episode: 新开一局 </p>
+<h1 id="2-3-Doom-Builder"><a href="#2-3-Doom-Builder" class="headerlink" title="2.3 Doom Builder"></a>2.3 Doom Builder</h1><p>  VizDoom只是提供一个控制Doom游戏的框架，其控制能力是有限的。实际上要打造一个自己的游戏环境，更合适的方式是用<a href="http://www.doombuilder.com/" target="_blank" rel="external">Doom Builder</a>创建自己的地图，可以完成对游戏内容的完全控制。</p>
+<center><br><img src="http://i.imgur.com/sitQ8tm.png" alt=""><br></center>
+
+<p>  它包含Vertices、Linedefs、Sectors、Things、Brightness及Make Sectors共6中mode，常用的是前4种，分别编辑地图中的点、线、区域和事物（比如起始位置、补给箱、弹药等）。这些是用来设计地图中的场景，而执行逻辑要靠<a href="https://zdoom.org/wiki/ACS" target="_blank" rel="external">ACS</a> 脚本。以下面的代码为例，分别定义打开游戏、进入新的episode和角色重生时的动作：角色使用火箭炮，并配备10发炮弹。其他示例可以自行查看scenarios/*.wad文件，所幸这里的代码一般不用很长，所以只要构建出想要的地图和reward机制就可以了（reward机制是重点），Doom中built in的ACS functions可以参见<a href="https://zdoom.org/wiki/Built-in_ACS_functions" target="_blank" rel="external">这里</a>。</p>
+<pre><code class="python"><span class="comment">#include "zcommon.acs"</span>
+script <span class="number">1</span> OPEN
+{
+}
+script <span class="number">2</span> ENTER
+{
+    ClearInventory();
+    GiveInventory(<span class="string">"RocketLauncher"</span>,<span class="number">1</span>);
+    GiveInventory(<span class="string">"RocketAmmo"</span>,<span class="number">10</span>);
+}
+script <span class="number">3</span> RESPAWN
+{
+    ClearInventory();
+    GiveInventory(<span class="string">"RocketLauncher"</span>,<span class="number">1</span>);
+    GiveInventory(<span class="string">"RocketAmmo"</span>,<span class="number">10</span>);
+}
+</code></pre>
+<h2 id="3-训练过程"><a href="#3-训练过程" class="headerlink" title="3. 训练过程"></a>3. 训练过程</h2><p>  视频中的示例的训练过程总共耗时大概四五天时间（GeForce 940M）。训练过程是非常受制于游戏进程的：如果游戏本身运行速度不够快，训练过程中会有相当一部分时间被耽搁在等待游戏返回reward的过程（make_action）。</p>
+<p>  下图展示的是一些常用的优化方法收敛过程的视图：</p>
+<center><br><img src="http://i.imgur.com/TuoriLu.gif" alt="opt methods"><br></center>
+
+<p>  通常训练DQN使用比较多的Rmsprop，不同的优化方法也存在提高训练速度的可能。另一种改进方法是以A3C [5]的方式收集训练transitions，这样游戏进程的速度限制得到缓解。</p>
+<h2 id="4-青出于蓝"><a href="#4-青出于蓝" class="headerlink" title="4. 青出于蓝"></a>4. 青出于蓝</h2><p>  在以Random Bot为对手的环境中训练得到AI Bot后，可以尝试以AI Bot为对手，继续训练新的AI Bot2，感兴趣的同学可以试试看青出于蓝是否可以胜于蓝。A被B打败，C又打败B……但是恐怕随着难度的增加，这对训练过程的要求不断提高，是否能够靠同一个模型的不断训练和反馈来得到提高还有待商榷。</p>
+<p>相关阅读：</p>
+<p>[1]. <a href="http://glenn-roberts.com/posts/tech/2015/07/08/neuroevolution-with-mario.html" target="_blank" rel="external">neuro evolution with mario</a></p>
+<p>[2]. <a href="https://arxiv.org/pdf/1312.5602.pdf" target="_blank" rel="external">Playing Atari with Deep Reinforcement Learning</a>)</p>
+<p>[3]. <a href="https://arxiv.org/pdf/1509.06461v3.pdf" target="_blank" rel="external">Deep Reinforcement Learning with Double Q-learning</a></p>
+<p>[4]. <a href="https://arxiv.org/pdf/1511.06581v3.pdf" target="_blank" rel="external">Dueling Network Architectures for Deep Reinforcement Learning</a></p>
+<p>[5]. <a href="https://arxiv.org/pdf/1602.01783.pdf" target="_blank" rel="external">Asynchronous Methods for Deep Reinforcement Learning</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/" data-id="cixa57cfc0000c4q4e60uvsp3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Playing-Street-Fighter-with-DQN" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/29/Playing-Street-Fighter-with-DQN/" class="article-date">
+  <time datetime="2016-11-29T06:39:05.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/29/Playing-Street-Fighter-with-DQN/">Playing Street Fighter with DQN</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<p><img src="http://i.imgur.com/fD6Q6zY.png" alt=""></p>
+<p>State,Reward and Action are the core elements in reinforcement learning. So when considering playing streetfighter by DQN, the first coming question is how to receive game state and how to control the player. If we can get access to the game’s inner variables like players’ blood, action,dead or live, etc, it’s really clean and friendly to use. But to implement the idea as soon as possible I choose to use a raw method(screen_grab and keyboard/mouse event) to save time.</p>
+<p>Here is the <a href="https://github.com/AlloyTeam/StreetFighter" target="_blank" rel="external">game</a>.<br><img src="http://i.imgur.com/472pxyS.png" alt=""></p>
+<h1 id="How-to-get-game-state"><a href="#How-to-get-game-state" class="headerlink" title="How to get game state?"></a>How to get game state?</h1><hr>
+<p>The following code aims to get a quick grab of the game screen.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageGrab</div><div class="line"></div><div class="line">g_game_box = (<span class="number">142</span>,<span class="number">124</span>,<span class="number">911</span>,<span class="number">487</span>) <span class="comment">#(x1,y1,w,h)</span></div><div class="line"><span class="comment"># Get current game image</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_screen</span><span class="params">()</span>:</span></div><div class="line">    im = np.array(ImageGrab.grab((g_game_box[<span class="number">0</span>],g_game_box[<span class="number">1</span>], g_game_box[<span class="number">0</span>]+g_game_box[<span class="number">2</span>]<span class="number">-1</span>,g_game_box[<span class="number">1</span>]+g_game_box[<span class="number">3</span>]<span class="number">-1</span>)))</div><div class="line">    <span class="keyword">return</span> im</div></pre></td></tr></table></figure>
+<p>Here the <code>g_game_box</code> is the meaningful game region.When called without arguments, <code>ImageGrab.grab</code>will return the WHOLE SCREEN REGION. Basically everytime you open a new game, it will appear at the same cordinates, So I set the box fixed to (142,124,911,487). You must modify it on your computer since it very likely changes. </p>
+<p>The <code>im</code> we get is the state at step <code>t</code>, more specifically, the observation of step <code>t</code>. Besides the screen image we need to know about the players’ blood.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Check player blood</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_player_blood</span><span class="params">(img, box)</span>:</span></div><div class="line">    img = img[box[<span class="number">1</span>]:(box[<span class="number">1</span>]+box[<span class="number">3</span>]), box[<span class="number">0</span>]:(box[<span class="number">0</span>]+box[<span class="number">2</span>]), <span class="number">1</span>]</div><div class="line">    width, height = img.shape</div><div class="line">    blood_points = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(width):</div><div class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(height):</div><div class="line">            <span class="keyword">if</span>(img[x,y] &gt; <span class="number">128</span>): <span class="comment"># blood point</span></div><div class="line">                blood_points += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> blood_points*<span class="number">100</span>/(width*height)</div></pre></td></tr></table></figure>
+<p>This time the <code>box</code> is the players’ blood bar region(i.e, the blue box in the following image):</p>
+<p><img src="http://i.imgur.com/KoA5kB3.png" alt=""></p>
+<p><code>check_player_blood</code> receives the game image and certain player’s, i.e, your or enemy’s, blood bar box, and returns his blood left between 0~100.</p>
+<h1 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h1><hr>
+<p><strong>Lasagne and Theano</strong></p>
+<p><strong>CUDA</strong></p>
+<p>To install Lasagne on window, you can refer to my another blog <a href="https://tabsun.github.io/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" target="_blank" rel="external">“Lasagne On Win7 With GPU Environment &amp; VizDoom Compilation”</a> written in Chinese.</p>
+<h1 id="How-to-control-the-player"><a href="#How-to-control-the-player" class="headerlink" title="How to control the player?"></a>How to control the player?</h1><hr>
+<p>For the host player, you can use W/D/A/S to control directions and J/K/U/I for fist and leg. Python can simulate the keyborad and mouse operations by <code>win32api</code> and <code>win32con</code>. </p>
+<p><strong>Keyboard simulation</strong><br>Below is used keys’ virtual value:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">g_available_keys = (<span class="number">65</span>,<span class="comment"># A </span></div><div class="line">                    <span class="number">87</span>,<span class="comment"># W </span></div><div class="line">                    <span class="number">83</span>,<span class="comment"># S </span></div><div class="line">                    <span class="number">68</span>,<span class="comment"># D </span></div><div class="line">                    <span class="number">74</span>,<span class="comment"># J </span></div><div class="line">                    <span class="number">75</span>,<span class="comment"># K </span></div><div class="line">                    <span class="number">85</span>,<span class="comment"># U </span></div><div class="line">                    <span class="number">73</span>)<span class="comment"># I</span></div></pre></td></tr></table></figure></p>
+<p>We can give player commands by following code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> win32api,win32con</div><div class="line">	</div><div class="line">g_single_frame_time = <span class="number">0.02</span></div><div class="line">frame_repeat = <span class="number">4</span></div><div class="line">	</div><div class="line"><span class="comment"># Action = which buttons are pressed</span></div><div class="line">n = len(g_available_keys)</div><div class="line">actions = [list(a) <span class="keyword">for</span> a <span class="keyword">in</span> it.product([<span class="number">0</span>, <span class="number">1</span>], repeat=n)]</div><div class="line"></div><div class="line"><span class="comment"># Key push</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">key_do</span><span class="params">(keys, frame_repeat)</span>:</span></div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> keys:</div><div class="line">        win32api.keybd_event(key,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</div><div class="line">    sleep(frame_repeat*g_single_frame_time)</div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> keys:</div><div class="line">        win32api.keybd_event(key,<span class="number">0</span>,win32con.KEYEVENTF_KEYUP,<span class="number">0</span>)</div><div class="line">        </div><div class="line"><span class="comment"># Make actions</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_action</span><span class="params">(action, frame_repeat)</span>:</span></div><div class="line">    keys = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(action)):</div><div class="line">        <span class="keyword">if</span>(action[i]):</div><div class="line">        	   keys = keys + [g_available_keys[i],]</div><div class="line">    key_do(keys,frame_repeat)</div></pre></td></tr></table></figure>
+<p>Then when we call <code>make_action((1,0,0,0,0,0,0,0), 4)</code>, the player receive “keep back” command, while <code>make_action((0,1,0,0,0,0,0,0), 4)</code> means “jump”, <code>make_action((1,1,0,0,0,0,0,0), 4)</code> means “jump back”.</p>
+<p><strong>Mouse simulation</strong><br>Although we do not use mouse to control the player, under some conditions when certain player is dead the game gets renewed, but the players’ blood bar will be wrong. I mean the bar region gets longer or shorter. If you keep observing the game progress for some time this will appear. I believe it’s some kind of bug so when this occurs you’d better close the game and reopen it. That’s why mouse simulation is needed, to reopen the game in Chrome.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mousePos</span><span class="params">(cord)</span>:</span></div><div class="line">   win32api.SetCursorPos(cord)</div><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">leftClick</span><span class="params">()</span>:</span></div><div class="line">    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,<span class="number">0</span>,<span class="number">0</span>)</div><div class="line">    sleep(<span class="number">.1</span>)</div><div class="line">    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,<span class="number">0</span>,<span class="number">0</span>)</div><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">doubleClick</span><span class="params">()</span>:</span></div><div class="line">    leftClick()</div><div class="line">    sleep(<span class="number">.1</span>)</div><div class="line">    leftClick()</div><div class="line">    </div><div class="line"><span class="comment"># Close and Open a new game</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">close_game</span><span class="params">()</span>:</span></div><div class="line">    mousePos((<span class="number">1151</span>,<span class="number">9</span>))</div><div class="line">    leftClick()</div><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">open_game</span><span class="params">()</span>:</span></div><div class="line">    mousePos((<span class="number">212</span>,<span class="number">205</span>))</div><div class="line">    doubleClick()</div><div class="line"></div><div class="line"><span class="comment"># New an game environment</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_game</span><span class="params">()</span>:</span></div><div class="line">    time_looping = time()</div><div class="line">    <span class="keyword">while</span>(<span class="keyword">True</span>):</div><div class="line">        image = get_screen()</div><div class="line">        red_blood = check_player_blood(image, g_red_blood_box)</div><div class="line">        blue_blood = check_player_blood(image, g_blue_blood_box)</div><div class="line">        <span class="keyword">if</span>(red_blood &gt;= <span class="number">100</span> <span class="keyword">and</span> blue_blood &gt;= <span class="number">100</span>):</div><div class="line">            <span class="keyword">break</span></div><div class="line"></div><div class="line">        time_wait = time() - time_looping</div><div class="line">        <span class="keyword">if</span>(time_wait &gt; <span class="number">10</span>):</div><div class="line">            close_game()</div><div class="line">            open_game()</div><div class="line">            mousePos((<span class="number">30</span>,<span class="number">60</span>))</div><div class="line">			leftClick()</div></pre></td></tr></table></figure>
+<p><code>(1151,9)</code> is the <img src="http://i.imgur.com/joaryAf.png" alt=""> while <code>(212,205)</code> is the index.html positon in the screen.<code>leftClick</code> on (30,60) is to give the chrome focus.<br> <img src="http://i.imgur.com/XXcusF7.png" alt=""> </p>
+<h1 id="How-to-set-reward"><a href="#How-to-set-reward" class="headerlink" title="How to set reward?"></a>How to set reward?</h1><hr>
+<p>I give the player living_reward = -1 and <code>-self_blood_lose</code>, <code>3*enemy_blood_lose</code>, -200 for self death and 200 for enemy’s death. Here <code>3*enemy_blood_lose</code>means encouragement for attack.<br>The reward meachanism is REALLY IMPORTANT and more experments need to be done on this topic.</p>
+<h1 id="Training-setting"><a href="#Training-setting" class="headerlink" title="Training setting"></a>Training setting</h1><hr>
+<p><strong>Network architecture</strong><br><code>Input228x122x3</code></p>
+<p><code>Conv12x12x8@s=3,sigmoid</code></p>
+<p><code>MaxPool2x2@s=1</code></p>
+<p><code>Conv7x7x16@s=2,sigmoid</code></p>
+<p><code>MaxPool2x2@s=1</code></p>
+<p>33x13x16 = 6864 elements by estimation</p>
+<p><code>Dense128@sigmoid</code></p>
+<p><code>Dense256</code>(output)</p>
+<p><strong>Parameters</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">g_learning_rate = <span class="number">0.00025</span></div><div class="line">g_discount_factor = <span class="number">0.95</span></div><div class="line">g_epochs = <span class="number">100</span></div><div class="line">g_learning_steps_per_epoch = <span class="number">50000</span></div><div class="line">g_replay_memory_size = <span class="number">10000</span></div><div class="line">g_batch_size = <span class="number">64</span></div><div class="line">g_test_episodes_per_epoch = <span class="number">10</span></div><div class="line">g_frame_repeat = <span class="number">4</span></div></pre></td></tr></table></figure></p>
+<h1 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h1><hr>
+<p>To accelerate the training process, I commented the test in every epoch and only focus on training scores.<br>And also for training simplicity, the game backgroud is changed to white. If necessary you can set it by yourself. Just modify StreetFighter/images/g/behind.gif and front.gif.</p>
+<h1 id="Current-Result"><a href="#Current-Result" class="headerlink" title="Current Result"></a>Current Result</h1><hr>
+<p>At the beginning I set epochs = 20 and learning_steps_per_epoch = 2000. And make following attempts:</p>
+<ol>
+<li>change gray input to color input — no convergence </li>
+<li>change frame_repeat to 2,4,12 — no convergence</li>
+<li><p>change reward: </p>
+<p> add death penalty — no convergence</p>
+<p> add living reward — no convergence</p>
+<p> give more reward on attack — no convergence</p>
+</li>
+<li>change relu to sigmoid — no convergence</li>
+<li>add maxpooling layer — no convergence</li>
+<li>change the input size — no convergence</li>
+<li>change the keys to available actions</li>
+<li>try dueling dqn</li>
+</ol>
+<p>And after ranging from these params, I think the problem is that the total train steps(minibatch weight update times) aren’t enough as the paper “Playing Atari with Deep Reinforcement Learning” points, it takes 100 epochs x 50000 minibatch updates.Comparing to this number my setting is too naive.So now I’m doing experiment on new setting.</p>
+<p>REALLY EXPECT FOR A GOOD PERFORMANCE, OR AT LEAST CONVERGENCE!!!!</p>
+<p>The Rainbow comes after the storm.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><hr>
+<ol>
+<li><a href="https://github.com/tabsun/AI4SF" target="_blank" rel="external">Project</a></li>
+<li><a href="https://arxiv.org/pdf/1312.5602.pdf" target="_blank" rel="external">Playing Atari with Deep Reinforcement Learning</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/how-to-build-a-python-bot-that-can-play-web-games--active-11117" target="_blank" rel="external">How to build a python bot that can play web games</a></li>
+<li><a href="https://github.com/AlloyTeam/StreetFighter" target="_blank" rel="external">Street Fighter</a></li>
+<li><a href="https://github.com/Marqt/ViZDoom" target="_blank" rel="external">VizDoom</a></li>
+<li>virtual keys value<br> <img src="http://i.imgur.com/YTDu4Cs.png" alt=""></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/29/Playing-Street-Fighter-with-DQN/" data-id="cixa57chg0003c4q437r5sjra" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" class="article-date">
+  <time datetime="2016-11-25T07:00:04.000Z" itemprop="datePublished">2016-11-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/">Lasagne on win7 with GPU Environment &amp; VizDoom compilation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Theano与Lasagne"><a href="#Theano与Lasagne" class="headerlink" title="Theano与Lasagne"></a>Theano与Lasagne</h2><hr>
+<h3 id="1-Anaconda安装"><a href="#1-Anaconda安装" class="headerlink" title="1. Anaconda安装"></a>1. <a href="http://www.continuum.io/downloads" target="_blank" rel="external">Anaconda</a>安装</h3><h3 id="2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下"><a href="#2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下" class="headerlink" title="2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下"></a>2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下</h3><h3 id="3-进入Conda-prompt："><a href="#3-进入Conda-prompt：" class="headerlink" title="3. 进入Conda prompt："></a>3. 进入Conda prompt：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">conda create -n python34 python=3.4.4</div><div class="line">activate python34</div><div class="line">cd C:/Program Files/Anaconda2/envs/python34/Scripts</div><div class="line">conda install mingw</div><div class="line">conda install libpython -n python34</div><div class="line">conda install scipy</div><div class="line">conda install nose</div><div class="line">conda install theano</div></pre></td></tr></table></figure>
+</code></pre><h3 id="4-检查下mingw的目录是否在环境变量中："><a href="#4-检查下mingw的目录是否在环境变量中：" class="headerlink" title="4. 检查下mingw的目录是否在环境变量中："></a>4. 检查下mingw的目录是否在环境变量中：</h3><p>path:<br><code>C:\Program Files\Anaconda2\envs\python34\MinGW\bin</code><br><code>C:\Program Files\Anaconda2\envs\python34\MinGW\x86_64-w64-mingw32\lib</code><br>这个目录与攻略中略有不同，因为我们通过anaconda安装的mingw在python34目录下<br>PYTHONPATH:<br><code>C:\Program Files\Anaconda2\Lib\site-packages\theano</code></p>
+<h3 id="5-安装VS2015"><a href="#5-安装VS2015" class="headerlink" title="5. 安装VS2015"></a>5. 安装VS2015</h3><p>在VizDoom的编译中是必须的，而且CUDA安装时同样需要VS2015.</p>
+<h3 id="6-安装CUDA"><a href="#6-安装CUDA" class="headerlink" title="6. 安装CUDA"></a>6. 安装CUDA</h3><p>在安装cuda之前最好先安装DirectX，而在安装DirectX的过程中可能会遇到S1023错误，这是因为和之前安装的旧版本冲突了，所以先在控制面板中卸载Microsoft Visual C++ 2010 x86/x64 Redistributable，再重新安装就好了。<br>cuda-8.0 for windows 64bit + visual studio 2015,实际上最终安装的版本是cuda 7.5+vs2010，下面将看到这个折腾的过程。<br>基本上按照<a href="http://blog.csdn.net/yeyang911/article/details/17450963" target="_blank" rel="external">here</a>的顺序就可以，但是在测试cuda是否安装成功和设置cuda目录的时候，都发现sdk目录下好像缺失了些什么，比如没有bandwidthtest和queryDevice两个测试程序。<br>这里的两个测试程序是需要使用vs自己去编译的，而不是cuda在安装过程中生成的。在上面的安装执行结束后，sdk的安装目录（也就是上面CUDA samples的安装目录）下，会生成vs的sln文件，打开并编译。如果和我一样忘记安装DirectX，在这里编译时就会遇到simpleD3D10工程中有找不到d3dx9.h的错误，此时安装DirectX后设置好include和lib目录就可以了。而笔者是安装DirectX后重新安装CUDA toolkit的，在重新安装的时候还遇到一次黑屏，还好虚惊一场。<br>测试过程中，bandwidthTest和deviceQuery都得到“设备无法被弹出或拔出”的错误提示，所以重新查找并安装了显卡驱动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">353.30 fail 35 cuda version is insufficient for cuda runtime version</div><div class="line">365.10 fail 30 unknown error</div><div class="line">365.19 fail 30 unknown error</div><div class="line">368.22 fail 30 unknown error</div><div class="line">368.39 fail 38 弹出</div><div class="line">368.69 安装失败黑屏</div><div class="line">368.81 安装失败黑屏</div><div class="line">369.30 fail 38 弹出</div><div class="line">372.70 fail 38 弹出</div><div class="line">373.06 安装失败黑屏</div></pre></td></tr></table></figure>
+<p>后来重装系统并安装驱动353.90后cuda 7.5版本可用，而使用相同的驱动如果是cuda 8.0则会被提示驱动版本insufficient的问题，至此可以说，8.0+vs2015的搭配在我的笔记本上是失败的，所以最终只能选择7.5了。最后不死心地在另一名同事的机器上尝试了8.0+vs2015 community的搭配，成功了，这很让我费解。他的机器是GeForce GT 720M显卡，我的是GeForce 940M显卡，所以如果你是720就大胆地去用8.0吧，否则7.5的成功概率高多了。如果有人知道根本原因或者解决方案，请务必赐教于我。</p>
+<h3 id="7-配置theano路径"><a href="#7-配置theano路径" class="headerlink" title="7. 配置theano路径"></a>7. 配置theano路径</h3><p>进入C盘下当前用户的路径，我的是在C:\Users\Administrator<br>新建文件.theanorc.txt:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[global]</div><div class="line">floatX = float32</div><div class="line">device = gpu</div><div class="line">[nvcc]</div><div class="line">--flags=-LC:\Program Files\Anaconda2\envs\python27\libs</div><div class="line">--compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin</div></pre></td></tr></table></figure></p>
+<h3 id="8-使用test-py与using-gpu-py测试theano安装情况"><a href="#8-使用test-py与using-gpu-py测试theano安装情况" class="headerlink" title="8. 使用test.py与using_gpu.py测试theano安装情况"></a>8. 使用test.py与using_gpu.py测试theano安装情况</h3><p>出现的第一个错误：<br><code>undefined reference to __imp_pyexc_typeerror</code><br>这个PyExc_TypeError出现在mod.cpp中。经过查找居然是没有安装libpython的原因，检查安装了哪些可以通过conda list查询。虽然上面我明明执行过conda install libpython的操作，但是的确重新执行一次就不会有这个错误了，所以遇到类似错误可以查看conda list 是不是安装了libpython。在安装后一定要重新安装theano,并且在path中添加下cuda toolkit的bin目录，否则又会进入到下面的错误中。<br>出现的第二个错误：<br><code>importerror the following error happened while compiling node</code><br>出现的第三个错误：<br><code>找不到cl.exe</code><br>需要把C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin目录添加到path目录，cl就在这个目录下。<br>之后就可以看到正常的测试情况了。</p>
+<h3 id="9-安装OpenBlas"><a href="#9-安装OpenBlas" class="headerlink" title="9. 安装OpenBlas"></a>9. 安装OpenBlas</h3><p>如果用check_blas.py测试可以看到现在的theano并没有使用blas，而是numpy。这里使用的是win7 64bit下编译好的OpenBlas，直接添加在相关路径下。<br>把mingw64_dll.zip 下的三个dll和OpenBLAS-v0.2.15-Win64-int32.zip下的libopenblas.dll copy到C:\Program Files\Anaconda2\envs\python27\MinGW\bin目录下，当然只要在path目录中就可以，我觉得这里比较合适。<br>然后在.theanorc.txt中添加如下配置项：<br><code>[blas]
+ldflags=-lopenblas
+[gcc]
+cxxflags=-IC:\openblas\include -LC:\openblas\lib</code><br>这里openblas就是解压后的OpenBLAS-v0.2.15-Win64-int32.zip路径。<br>再次执行check_blas.py的时候可以看到最后，这表明blas安装成功了，而之前是without direct Theano binding to blas …… to numpy……</p>
+<h3 id="10-安装Lasagne"><a href="#10-安装Lasagne" class="headerlink" title="10. 安装Lasagne"></a>10. 安装Lasagne</h3><p>在anaconda prompt中进入envs/python27/Scripts目录，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --upgrade --no-deps --user https://github.com/Lasagne/Lasagne/archive/master.zip</div></pre></td></tr></table></figure></p>
+<p>之后可以尝试</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python mnist.py mlp <span class="number">5</span></div></pre></td></tr></table></figure>
+<p>将会下载数据并执行mnist任务，返回5次epoch的训练结果。<br>如果需要cuCNN，请参见<a href="https://github.com/Lasagne/Lasagne/wiki/From-Zero-to-Lasagne-on-Windows-7-%2864-bit%29" target="_blank" rel="external">here</a><br>至此，theano和lasagne的安装已经完成了。接下来是要编译VizDoom了。</p>
+<h2 id="VizDoom"><a href="#VizDoom" class="headerlink" title="VizDoom"></a>VizDoom</h2><hr>
+<p>VizDoom的编译惨遭Doom的编译过程，请严格执行如下<a href="http://zdoom.org/wiki/Compile_ZDoom_on_Windows" target="_blank" rel="external">tutorial</a></p>
+<p>有几个点尤其要注意：</p>
+<ol>
+<li>一定用vs2015，虽然说是支持vs2012</li>
+<li>cmake配置工程项的时候，如果不需要JAVA支持（我使用python binding）尽量就不要选了；而其中有些zlib等要选择inner编译<br>我直接copy了在另一个机器上（同样为win7 64bit）的编译结果，如果真的懒得安装那么多东西，可以直接copy我编译的结果。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" data-id="cixa57che0002c4q445re5pb8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/23/hello-world/" class="article-date">
+  <time datetime="2016-11-23T14:04:56.194Z" itemprop="datePublished">2016-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/23/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/23/hello-world/" data-id="cixa57chb0001c4q4jdc53jd3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/">Playing Doom Game with Deep Reinforcement Learning</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/29/Playing-Street-Fighter-with-DQN/">Playing Street Fighter with DQN</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/">Lasagne on win7 with GPU Environment &amp; VizDoom compilation</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
         
       </div>
-
-      <div class="article-meta">
-        <span class="article-date">Dec 29 2016</span>
-      </div>
-    </article>
+      <footer id="footer">
   
-    <article>
-      <h1 class="article-title">
-        <a href="/2016/11/29/Playing-Street-Fighter-with-DQN/">Playing Street Fighter with DQN</a>
-      </h1>
-
-      <div class="article-entry">
-        
-      </div>
-
-      <div class="article-meta">
-        <span class="article-date">Nov 29 2016</span>
-      </div>
-    </article>
-  
-    <article>
-      <h1 class="article-title">
-        <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/">Lasagne on win7 with GPU Environment & VizDoom compilation</a>
-      </h1>
-
-      <div class="article-entry">
-        
-      </div>
-
-      <div class="article-meta">
-        <span class="article-date">Nov 25 2016</span>
-      </div>
-    </article>
-  
-    <article>
-      <h1 class="article-title">
-        <a href="/2016/11/23/hello-world/">Hello World</a>
-      </h1>
-
-      <div class="article-entry">
-        
-      </div>
-
-      <div class="article-meta">
-        <span class="article-date">Nov 23 2016</span>
-      </div>
-    </article>
-  
-
-  <nav class="page-nav">
-  <span class="page-number current">1</span>
-</nav>
-
-</main>
-
-<footer class="app-footer">
-  <p> Powered by <a href="https://hexo.io"> Hexo </a> <p>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tabsun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-<script src="/js/app.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
 </body>
 </html>

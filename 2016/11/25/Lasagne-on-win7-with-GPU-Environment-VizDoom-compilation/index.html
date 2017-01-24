@@ -2,43 +2,93 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Lasagne on win7 with GPU Environment &amp; VizDoom compilation | Tabsun</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
+  <title>Lasagne on win7 with GPU Environment &amp; VizDoom compilation | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Theano与Lasagne
+1. Anaconda安装2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下3. 进入Conda prompt：12345678conda create -n python34 python=3.4.4activate python34cd C:/Program Files/Anaconda2/envs/p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasagne on win7 with GPU Environment & VizDoom compilation">
+<meta property="og:url" content="http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Theano与Lasagne
+1. Anaconda安装2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下3. 进入Conda prompt：12345678conda create -n python34 python=3.4.4activate python34cd C:/Program Files/Anaconda2/envs/p">
+<meta property="og:updated_time" content="2016-11-25T07:25:45.358Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lasagne on win7 with GPU Environment & VizDoom compilation">
+<meta name="twitter:description" content="Theano与Lasagne
+1. Anaconda安装2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下3. 进入Conda prompt：12345678conda create -n python34 python=3.4.4activate python34cd C:/Program Files/Anaconda2/envs/p">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
 </head>
 
 <body>
-  <nav class="app-nav">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" class="article-date">
+  <time datetime="2016-11-25T07:00:04.000Z" itemprop="datePublished">2016-11-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    
-      <a href="/.">home</a>
-    
+    <h1 class="article-title" itemprop="name">
+      Lasagne on win7 with GPU Environment &amp; VizDoom compilation
+    </h1>
   
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/">Lasagne on win7 with GPU Environment & VizDoom compilation</a>
-  </h1>
-
-  <section class="article-meta">
-    <p class="article-date">November 25 2016</p>
-  </section>
-
-  <section class="article-entry">
-    <h2 id="Theano与Lasagne"><a href="#Theano与Lasagne" class="headerlink" title="Theano与Lasagne"></a>Theano与Lasagne</h2><hr>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Theano与Lasagne"><a href="#Theano与Lasagne" class="headerlink" title="Theano与Lasagne"></a>Theano与Lasagne</h2><hr>
 <h3 id="1-Anaconda安装"><a href="#1-Anaconda安装" class="headerlink" title="1. Anaconda安装"></a>1. <a href="http://www.continuum.io/downloads" target="_blank" rel="external">Anaconda</a>安装</h3><h3 id="2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下"><a href="#2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下" class="headerlink" title="2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下"></a>2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下</h3><h3 id="3-进入Conda-prompt："><a href="#3-进入Conda-prompt：" class="headerlink" title="3. 进入Conda prompt："></a>3. 进入Conda prompt：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">conda create -n python34 python=3.4.4</div><div class="line">activate python34</div><div class="line">cd C:/Program Files/Anaconda2/envs/python34/Scripts</div><div class="line">conda install mingw</div><div class="line">conda install libpython -n python34</div><div class="line">conda install scipy</div><div class="line">conda install nose</div><div class="line">conda install theano</div></pre></td></tr></table></figure>
 </code></pre><h3 id="4-检查下mingw的目录是否在环境变量中："><a href="#4-检查下mingw的目录是否在环境变量中：" class="headerlink" title="4. 检查下mingw的目录是否在环境变量中："></a>4. 检查下mingw的目录是否在环境变量中：</h3><p>path:<br><code>C:\Program Files\Anaconda2\envs\python34\MinGW\bin</code><br><code>C:\Program Files\Anaconda2\envs\python34\MinGW\x86_64-w64-mingw32\lib</code><br>这个目录与攻略中略有不同，因为我们通过anaconda安装的mingw在python34目录下<br>PYTHONPATH:<br><code>C:\Program Files\Anaconda2\Lib\site-packages\theano</code></p>
 <h3 id="5-安装VS2015"><a href="#5-安装VS2015" class="headerlink" title="5. 安装VS2015"></a>5. 安装VS2015</h3><p>在VizDoom的编译中是必须的，而且CUDA安装时同样需要VS2015.</p>
@@ -63,78 +113,118 @@ cxxflags=-IC:\openblas\include -LC:\openblas\lib</code><br>这里openblas就是�
 <li>cmake配置工程项的时候，如果不需要JAVA支持（我使用python binding）尽量就不要选了；而其中有些zlib等要选择inner编译<br>我直接copy了在另一个机器上（同样为win7 64bit）的编译结果，如果真的懒得安装那么多东西，可以直接copy我编译的结果。</li>
 </ol>
 
-  </section>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/" data-id="cixa57che0002c4q445re5pb8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/29/Playing-Street-Fighter-with-DQN/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Playing Street Fighter with DQN
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="/images/tab.jpg" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> Tabsun </p>
-      <p class="subtitle"> Hope, Smile, Love, Safe </p>
-    <div>
-  </section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text= id="Theano与Lasagne""
->
-  Tweet
-</a>
+  
+    
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
-  </section>
-</div>
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
 
 
   
     
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/">Playing Doom Game with Deep Reinforcement Learning</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/29/Playing-Street-Fighter-with-DQN/">Playing Street Fighter with DQN</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/">Lasagne on win7 with GPU Environment &amp; VizDoom compilation</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
   </div>
-</section>
-
-<script>
-  var disqus_shortname = 'Tabsun';
-  
-  var disqus_url = 'http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
   
-</main>
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tabsun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
 </body>
 </html>
