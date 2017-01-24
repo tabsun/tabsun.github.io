@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-29T09:19:34.686Z</updated>
+  <updated>2017-01-24T07:13:52.775Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,14 @@
     <link href="http://yoursite.com/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/"/>
     <id>http://yoursite.com/2016/12/29/Playing-Doom-Game-with-Deep-Reinforcement-Learning/</id>
     <published>2016-12-29T08:31:08.000Z</published>
-    <updated>2016-12-29T09:19:34.686Z</updated>
+    <updated>2017-01-24T07:13:52.775Z</updated>
     
     <content type="html"><![CDATA[<p>FPS（First Person Shooter），第一人称射击游戏，这里特指的是<a href="http://vizdoom.cs.put.edu.pl/" target="_blank" rel="external">Doom</a>游戏。Doom是比较早的FPS游戏，经过修改的VizDoom非常适合做增强学习（Reinforcement Learning）方面的学习和实验。</p>
 <p>下面的视频中是在一个“小房子”里<font color="#ff0000"><strong>AI Bot（左）</strong></font>与一个随意行动的<font color="#009900"><strong>Random Bot（右）</strong></font>的对抗过程，在100场Test比赛中战胜Random Bot 95次。可以看到，AI Bot可以做到没有看到敌人时四处寻找，看到敌人时能够快速击毙敌人。而完成这些，模型不需要其他任何输入，仅需要当前游戏的画面，与真实玩家的操作过程没有任何区别。在几次测试中，因为操作不好，我基本没有赢过AI Bot，唯一的可能就是开局赶紧跑到他的背后，否则胜算不大，当然我是比较菜的。</p>
-<p><a href="https://www.youtube.com/watch?v=nqH3_YDCS9Q&amp;t=4s" target="_blank" rel="external"><strong>Demo Video: AI bot vs Random bot</strong></a></p>
+<p><strong>Demo Video: AI bot vs Random bot</strong></p>
+<iframe height="498" width="510" src="https://www.youtube.com/watch?v=nqH3_YDCS9Q&t=104s" frameborder="0" allowfullscreen></iframe>
+
+
 <h2 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1. 模型介绍"></a>1. 模型介绍</h2><p>  对于在某个时刻执行某种动作总是可以从环境获得固定响应的游戏，用NEAT [1] 这样的算法可以获得较好的效果，比如玩马里奥游戏时，如果你一直按着前进键不放，每次重生后的游戏过程都会完全一致（掉入某个悬崖或碰上第一个小怪物），而在Doom游戏中如果你一直在原地射击，你的敌人的行动会不同，出场时你的位置也不同，所以几乎不会出现完全一致的游戏过程（敌人可能会从不同角度射杀你或者一直互不相干）。</p>
 <p>  同时，与Atari游戏最大的不同是，获取的图像并非游戏的状态State，而是对当前状态的一次观察Observation，即角色周围90°范围内的内容。要解决的问题并不是MDPs(Markov decision processes)问题，而是POMDPs(partially observable MDPs)。DQN [2]在处理action依赖于history states的问题时，不易收敛。实际上在我的多次实验中，稍微复杂的任务都未能收敛。</p>
 <p>  在实验中发现，将DQN中的Q值网络分为Policy（下图下半部分计算advantage for actions的部分）与Value（上半部分计算state-value的部分）两个共享卷积层的网络（DDQN的做法[3]），并且将二者在网络末尾再次结合获得action value，这样的网络结构收敛能力得到大大的提高。实际上这种方式的优势是收敛性和泛化能力上都得到了提升[4]。</p>
@@ -87,7 +90,7 @@ script <span class="number">3</span> RESPAWN
     <link href="http://yoursite.com/2016/11/29/Playing-Street-Fighter-with-DQN/"/>
     <id>http://yoursite.com/2016/11/29/Playing-Street-Fighter-with-DQN/</id>
     <published>2016-11-29T06:39:05.000Z</published>
-    <updated>2017-01-24T04:43:47.166Z</updated>
+    <updated>2017-01-24T07:21:41.208Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
 <p><img src="http://i.imgur.com/fD6Q6zY.png" alt=""></p>
@@ -174,7 +177,7 @@ script <span class="number">3</span> RESPAWN
     <link href="http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/"/>
     <id>http://yoursite.com/2016/11/25/Lasagne-on-win7-with-GPU-Environment-VizDoom-compilation/</id>
     <published>2016-11-25T07:00:04.000Z</published>
-    <updated>2016-11-25T07:25:45.358Z</updated>
+    <updated>2017-01-24T07:08:05.575Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Theano与Lasagne"><a href="#Theano与Lasagne" class="headerlink" title="Theano与Lasagne"></a>Theano与Lasagne</h2><hr>
 <h3 id="1-Anaconda安装"><a href="#1-Anaconda安装" class="headerlink" title="1. Anaconda安装"></a>1. <a href="http://www.continuum.io/downloads" target="_blank" rel="external">Anaconda</a>安装</h3><h3 id="2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下"><a href="#2-copy-theano-目录到-path-to-Anaconda-Lib-site-package-目录下" class="headerlink" title="2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下"></a>2. copy theano 目录到 path/to/Anaconda/Lib/site-package 目录下</h3><h3 id="3-进入Conda-prompt："><a href="#3-进入Conda-prompt：" class="headerlink" title="3. 进入Conda prompt："></a>3. 进入Conda prompt：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">conda create -n python34 python=3.4.4</div><div class="line">activate python34</div><div class="line">cd C:/Program Files/Anaconda2/envs/python34/Scripts</div><div class="line">conda install mingw</div><div class="line">conda install libpython -n python34</div><div class="line">conda install scipy</div><div class="line">conda install nose</div><div class="line">conda install theano</div></pre></td></tr></table></figure>
@@ -217,7 +220,7 @@ cxxflags=-IC:\openblas\include -LC:\openblas\lib</code><br>这里openblas就是�
     <link href="http://yoursite.com/2016/11/23/hello-world/"/>
     <id>http://yoursite.com/2016/11/23/hello-world/</id>
     <published>2016-11-23T14:04:56.194Z</published>
-    <updated>2016-11-23T14:04:56.194Z</updated>
+    <updated>2017-01-24T05:35:12.743Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
